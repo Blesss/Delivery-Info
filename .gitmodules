@@ -10,3 +10,43 @@
 	path = sites/all/modules/contrib/rules
 	url = http://git.drupal.org/project/rules.git
 	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/entity"]
+	path = sites/all/modules/contrib/entity
+	url = http://git.drupal.org/project/entity.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/ctools"]
+	path = sites/all/modules/contrib/ctools
+	url = http://git.drupal.org/project/ctools.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/features"]
+	path = sites/all/modules/features
+	url = http://git.drupal.org/project/features.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/strongarm"]
+	path = sites/all/modules/contrib/strongarm
+	url = http://git.drupal.org/project/strongarm.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/elysia_cron"]
+	path = sites/all/modules/contrib/elysia_cron
+	url = http://git.drupal.org/project/elysia_cron.git
+	branch = master
+[submodule "sites/all/modules/contrib/redirect"]
+	path = sites/all/modules/contrib/redirect
+	url = http://git.drupal.org/project/redirect.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/globalredirect"]
+	path = sites/all/modules/contrib/globalredirect
+	url = http://git.drupal.org/project/globalredirect.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/pathauto"]
+	path = sites/all/modules/contrib/pathauto
+	url = http://git.drupal.org/project/pathauto.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/token"]
+	path = sites/all/modules/contrib/token
+	url = http://git.drupal.org/project/token.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/wysiwyg"]
+	path = sites/all/modules/contrib/wysiwyg
+	url = http://git.drupal.org/project/wysiwyg.git
+	branch = 7.x-2.x
