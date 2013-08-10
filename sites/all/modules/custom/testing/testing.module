@@ -23,7 +23,7 @@
 function testing_form() {
   $form['country'] = array(
     '#type'    => 'select',
-    '#title'   => t('Country'),
+    '#title'   => t('Country'),////
     '#options' => array('1'=> 'all'),
   );
 print_r(country_get_list());
