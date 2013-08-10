@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+ function testing_menu() {
+  $items = array();
+  $items['testing'] = array(
+    'title'           => 'Tetsing',
+    'page callback'   => 'drupal_get_form',
+    'page arguments'  => array('testing_form'),
+    'access callback' => TRUE,
+    'type'            => MENU_CALLBACK,
+  );
+
+  return $items;
+ }
+
+
+/**
+ * Testing form for testing page.
+ */
+function testing_form() {
+  $form['country'] = array(
+    '#type'    => 'select',
+    '#title'   => t('Country'),
+    '#options' => array('1'=> 'all'),
+  );
+print_r(country_get_list());
+  return $form;
+}
+
+/**
+ * Implements hook_menu().
+ */
+ function testing_form_alter(&$form, &$form_state, $form_id) {
+
+ }

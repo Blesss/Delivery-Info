@@ -50,3 +50,6 @@
 	path = sites/all/modules/contrib/wysiwyg
 	url = http://git.drupal.org/project/wysiwyg.git
 	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/countries"]
+	path = sites/all/modules/contrib/countries
+	url = http://git.drupal.org/project/countries.git
