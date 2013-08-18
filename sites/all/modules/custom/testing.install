@@ -1,0 +1,45 @@
+<?php
+
+
+ function testing_update_7002() {
+  $vid = 3; // id словаря
+
+  // $result_countries = db_query("SELECT * FROM country");
+  $result_countries1 = db_select('country', 'ct')
+    ->fields('ct', array('country_id', 'name'))
+    ->execute()
+    ->fetchallassoc('country_id');
+
+  foreach ($result_countries1 as $country) {
+    $result_regions1 = db_select('region', 'rg')
+      ->fields('rg')
+      ->condition('rg.country_id', $country->country_id)
+      ->execute()
+      ->fetchallassoc('region_id');
+    // $result_regions = db_query("SELECT * FROM region WHERE country_id = %d", $country->country_id);
+
+    db_query("INSERT INTO {term_data} (tid, vid, name, description) VALUES (%d, %d, '%s', '%s')", null, $vid, $country->name, '');
+    $cntr_id = db_last_insert_id('term_data', 'tid');
+    db_query("INSERT INTO {term_hierarchy} (tid, parent) VALUES (%d, %d)", $cntr_id, 0);
+
+    foreach ($result_regions1 as $region) {
+      $result_cities1 = db_select('city', 'ct')
+      ->fields('ct')
+      ->condition('rg.region_id', $region->region_id)
+      ->execute()
+      ->fetchallassoc('city_id');
+      // $result_cities = db_query("SELECT * FROM city WHERE region_id = %d", $region->region_id);
+
+      db_query("INSERT INTO {term_data} (tid, vid, name, description) VALUES (%d, %d, '%s', '%s')", null, $vid, $region->name, '');
+      $rgn_id = db_last_insert_id('term_data', 'tid');
+      db_query("INSERT INTO {term_hierarchy} (tid, parent) VALUES (%d, %d)", $rgn_id, $cntr_id);
+
+      foreach ($result_cities1 as $city) {
+
+        db_query("INSERT INTO {term_data} (tid, vid, name, description) VALUES (%d, %d, '%s', '%s')", null, $vid, $city->name, '');
+        $ct_id = db_last_insert_id('term_data', 'tid');
+        db_query("INSERT INTO {term_hierarchy} (tid, parent) VALUES (%d, %d)", $ct_id, $rgn_id);
+      }
+    }
+  }
+}
